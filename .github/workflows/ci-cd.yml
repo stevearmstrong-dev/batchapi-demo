@@ -26,3 +26,10 @@ jobs:
         with:
           name: code-coverage-report
           path: target/site/jacoco/
+      - name: Archive test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            target/surefire-reports/
+            target/karate-reports/
